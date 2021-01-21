@@ -1,3 +1,8 @@
+/*
+CREDITS
+DESIGN BY: Phuc Pham Creative
+TRANSLATION FROM DESIGN TO CODE: Luciana Murimi
+*/
 @import url("https://fonts.googleapis.com/css?family=Xanh Mono:400");
 /* @font-face {
     font-family: 'Xanh Mono';
@@ -170,7 +175,7 @@ tours */
 }
 @media screen and (max-width: 768px) {
     .latest-songs-flex {
-        flex-direction: column
+        flex-direction: column;
     }
 }
 .latest-songs-flex >* {
