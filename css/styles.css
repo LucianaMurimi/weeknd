@@ -26,7 +26,7 @@ body {
 .wrapper >*:not(:nth-child(2)) {
     padding: 20px 50px;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
     .wrapper >*:not(:nth-child(2)) {
         padding: 10px 20px;
     }
@@ -201,7 +201,7 @@ tbody:last-child {
     border-bottom: 1px solid #ccc;
 }
 /*responsiveness of the table*/
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
 	.tours-grid {
         display: flex;
         flex-direction: column;
@@ -337,7 +337,7 @@ figure {
 ===============================================================================
 media Queries to achieve gallery responsiveness
 */
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
     .photoshoots {
         padding-bottom: 0;
     }
