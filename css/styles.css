@@ -168,6 +168,11 @@ tours */
     justify-content: center; 
     align-items: center;
 }
+@media screen and (max-width: 768px) {
+    .latest-songs-flex {
+        flex-direction: column
+    }
+}
 .latest-songs-flex >* {
     margin: 10px;
 }
