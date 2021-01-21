@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css?family=Xanh Mono:400");
+/* @font-face {
+    font-family: 'Xanh Mono';
+    src: url('XanhMono-Regular.ttf'); 
+} */
+
+:root {
+	--main-white-color: #ffffff;
+	--main-black-color: #333333;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+    font: 16px/1.5 "Xanh Mono", sans-serif;
+    color: var(--main-white-color);
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+}
+.wrapper >*:not(:nth-child(2)) {
+    padding: 20px 50px;
+}
+
+/* ------------------------------------------------------------------------- 
+header */
+.page-header {
+    background: var(--main-black-color);
+}
+.page-header nav {
+   display: flex;
+   flex-wrap: wrap; 
+   justify-content: space-between; /*for the space btwn h2 and the ul*/
+   align-items: center;
+}
+/* hide the link that should open and close the navbar on small screens */
+.page-header nav .icon {
+    display: none;
+}
+.page-header ul {
+    list-style: none;
+	display: flex;
+	order: 1;
+	width: auto; 
+	margin-top: 0;
+}
+.page-header ul li:not(:last-child) {
+	padding-right: 40px;
+}
+.page-header a {
+	text-decoration: none;
+	color: inherit;
+}
+.page-header a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------------- 
+main */
+/* .page-main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;	/*expands to cover available space inside the flex container*/
+	/* min-height: 350px;
+    background-image: linear-gradient(to right,#FF8000 0%,rgba(255, 0, 0, 0.5) 100%), url(../images/weekndscaled.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover; 
+    background-blend-mode: overlay;
+
+} */ 
+.page-main h1 {
+	margin-bottom: 20px;
+}
+.page-main p {
+    font-size: 0.8em;
+    font-family: monospace;
+}
+.page-main p + p {
+    margin-top: 10px;
+}
+.intro button {
+    color: var(--main-white-color);
+	background: none;
+	outline: none;
+    cursor: pointer;
+    
+    font-family: inherit;
+    font-size: 0.9em;
+	padding: 5px 18px;
+    border: 1px solid;
+    
+    margin-top: 20px;
+}
+.intro button:hover {
+    background-color: rgba(51,51,51, 0.8);
+}
+.icon {
+    font-size: 1.2em;
+}
+/* ------------------------------------------------------------------------- 
+intro */
+.intro-bg {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;	/*expands to cover available space inside the flex container*/
+	min-height: 85vh;
+    background-image: linear-gradient(to right,#FF8000 0%,rgba(255, 0, 0, 0.5) 100%), url(../images/weekndscaled.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover; 
+    background-blend-mode: overlay;
+}
+.intro {
+    max-width: 500px;
+    padding: 20px 50px;
+    background-color: rgba(51,51,51, 0.6);
+}
+/* ------------------------------------------------------------------------- 
+tours */
+.tours, .photoshoots, .latest-songs, .videos {
+    background-color: var(--main-white-color);
+    color: var(--main-black-color);
+    min-height: 85vh;
+    padding: 50px 50px;
+}
+.tours h1, .photoshoots h1, .latest-songs h1, .videos h1 {
+    display: inline;
+    margin-right: 20px;
+}
+.tours span, .photoshoots span, .latest-songs span, .videos span {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.tours-grid {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 20px 0 0; 
+}
+.latest-songs-flex {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+}
+.latest-songs-flex >* {
+    margin: 10px;
+}
+.latest-songs-flex h2, .latest-songs-flex p {
+    text-align: center;
+}
+.photoshoots, .tours, .videos {
+    padding-top: 0;
+}
+/* 
+table styling
+*/
+table { 
+    width: 100%;
+    border-collapse: collapse; 
+    font-family: monospace;
+}
+/* zebra striping */
+tr:nth-of-type(odd) { 
+    background: #eee; 
+}
+
+td { 
+    padding: 5px 40px; 
+    border-top: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    text-align: left; 
+}
+tbody:last-child {
+    border-bottom: 1px solid #ccc;
+}
+/*responsiveness of the table*/
+@media screen and (max-width: 550px) {
+	.tours-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    table {
+        width: auto;
+    }
+    td { 
+        padding: 5px 10px; 
+        border-top: 1px solid #ccc;
+        border-left: none;
+        border-right: none;
+        text-align: left; 
+    }
+}
+.tours button, .latest-songs-flex button {
+    color: var(--main-white-color);
+    margin: 0;
+}
+.tours button {
+    background-color:  var(--main-black-color);
+    padding: 5px 8px;
+    border: none;
+}
+.latest-songs-flex button{
+    background-color: var(--main-black-color);
+    padding: 8px 10px;
+    display: block;
+    display: block;
+    margin: 10px auto 0 auto;
+}
+.latest-songs-flex button:hover, .tours button:hover {
+    background-color: rgba(51,51,51, 0.8);
+    border: solid 2px var(--main-black-color);
+}
+
+.videos div {
+    margin-top: 20px;
+}
+iframe {
+    width: 100% !important;
+    height: 75vh !important;
+}
+
+/* ------------------------------------------------------------------------- 
+next and previous buttons */
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: rgba(51,51,51, 0.5);
+    color: var(--main-white-color);
+}
+
+.next {
+    background-color: var(--main-black-color);
+    color: var(--main-white-color);
+}
+.previous {
+    background-color: rgba(51,51,51, 0.7);
+    color: var(--main-white-color);
+}
+
+/* ------------------------------------------------------------------------- 
+media queries */
+@media screen and (max-width: 825px) {
+    .page-header li:not(:last-child) {display: none;}
+    .page-header li .icon {
+      display: inline;
+      float: right;
+    }
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		font-size: 18px;
+	}
+}
+/* ------------------------------------------------------------------------- 
+photoshoot gallery */
+figure {
+	position: relative;
+}
+.gallery {
+    margin-top: 20px;
+
+	display: grid; /*define grid container-8*8 grid container*/
+	grid-template-columns: repeat(8, 1fr);	/*set column tracks*/
+	grid-template-rows: repeat(8, 5vw);		/*set row tracks. set is: 8 rows each with the height of 5 viewport width*/
+	grid-gap: 5px;		/*grid gap between columns and containers*/
+}
+/*styling images*/
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.gallery__item--2 {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 9;
+}
+.gallery__item--3 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.gallery__item--4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 9;
+}
+.gallery__item--5 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 5;
+    grid-row-end: 9;
+}
+
+/*
+===============================================================================
+media Queries to achieve gallery responsiveness
+*/
+@media screen and (max-width: 550px) {
+    .photoshoots {
+        padding-bottom: 0;
+    }
+    .gallery {
+        margin-top: 20px;
+    
+        display: grid; /*define grid container-8*8 grid container*/
+        grid-template-columns: repeat(8, 1fr);	/*set column tracks*/
+        grid-template-rows: repeat(12, 9vw);		/*set row tracks. set is: 8 rows each with the height of 5 viewport width*/
+        grid-gap: 5px;		/*grid gap between columns and containers*/
+    }
+	.gallery__item--1 {
+	    grid-column-start: 1;
+	    grid-column-end: 5;
+	    grid-row-start: 1;
+	    grid-row-end: 5;
+	}
+	.gallery__item--2 {
+	    grid-column-start: 5;
+	    grid-column-end: 9;
+	    grid-row-start: 1;
+	    grid-row-end: 9;
+	}
+	.gallery__item--3 {
+	    grid-column-start: 1;
+	    grid-column-end: 5;
+	    grid-row-start: 5;
+	    grid-row-end: 9;
+	}
+	.gallery__item--4 {
+	    grid-column-start: 1;
+	    grid-column-end: 5;
+	    grid-row-start: 9;
+	    grid-row-end: 12;
+	}
+	.gallery__item--5 {
+	    grid-column-start: 5;
+	    grid-column-end: 9;
+	    grid-row-start: 9;
+	    grid-row-end: 12;
+	}
+} 
+
+/* ------------------------------------------------------------------------- 
+Page footer styling
+*/
+.page-footer div {
+    display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+    background: #ccc;
+    color: var(--main-black-color);
+    padding: 10px;
+    font-size: 0.7em; 
+    font-weight: bold; 
+} 
+.page-footer div span {
+    margin: 0px 10px;
+}
+@media screen and (max-width: 550px) {
+    .page-footer div span {
+        margin: 0px 3px;
+        font-size: 0.5em;
+    }
+}
+/*logos list*/
+.page-footer ul {
+	display: flex;
+	font-size: 0.8em;
+    margin-bottom: 5px;
+    justify-content: center;
+	list-style: none;
+}
+.page-footer ul li a {
+	text-decoration: none;
+	color: var(--main-black-color);
+}
+.page-footer ul li:not(:last-child) {
+	margin-right: 8px;
+}
