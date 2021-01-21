@@ -26,6 +26,22 @@ body {
 .wrapper >*:not(:nth-child(2)) {
     padding: 20px 50px;
 }
+@media screen and (max-width: 550px) {
+    .wrapper >*:not(:nth-child(2)) {
+        padding: 10px 20px;
+    }
+    .tours h1, .photoshoots h1, .latest-songs h1, .videos h1 {
+        display: inline;
+        margin-right: 10px;
+        font-size: 1.5em;
+    }
+    table, table button {
+        font-size: small;
+    }
+    .intro-bg {
+        min-height: 75vh;
+    }
+}
 
 /* ------------------------------------------------------------------------- 
 header */
@@ -227,7 +243,7 @@ tbody:last-child {
 }
 iframe {
     width: 100% !important;
-    height: 75vh !important;
+    min-height: 50% !important;
 }
 
 /* ------------------------------------------------------------------------- 
